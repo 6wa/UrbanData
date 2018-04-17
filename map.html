@@ -26,10 +26,13 @@ var map = new mapboxgl.Map({
   
     
     map.on("click", function() {
-      var c = map.getCenter();
-        console.log("hello");
-        console.log(c);
-    }
+      var c = map.getZoom();
+        console.log('zoom',c);
+    });
+    
+    map.on("load", function(){
+     console.log("Map is loaded");
+    });
 </script>
 
 </body>
