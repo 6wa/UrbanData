@@ -17,21 +17,32 @@
             background: #fff; 
             padding: 10px;
         }
+        
+        #button2 {
+            position:absolute; 
+            left:10px;
+            top:30px;
+            z-index: 19000; 
+            background: #fff; 
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     
 <div id='button'>Button 1</div>
-<div id='button'>Button 2</div>
+<div id='button2'>Button 2</div>
 
 <div id='map'></div>
     
 <script>
     
 var button = document.getElementById("button");
+var button2 = document.getElementById("button2");   
     
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWx0eW5haSIsImEiOiJjamR2dXVtb3MwNDlsMzNxbGszMjAzbmloIn0.npShBXLfxX-YKH9AoiCA7A';
-var map = new mapboxgl.Map({
+
+    var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/altynai/cjfz81udk59bf2so5goxh1pnm', // stylesheet location
     center: [37.611,55.753], // starting position [lng, lat]
@@ -43,7 +54,7 @@ var map = new mapboxgl.Map({
         console.log('zoom',c);
     }); */
 
-    button.addEventListener("click", kryaFunc);
+    button.addEventListener("click", kryaFunc); button2.addEventListener("click", kryaFunc);
     
  /*  function kryafunc () {
     var currentZoom = map.getZoom();
@@ -62,7 +73,7 @@ var map = new mapboxgl.Map({
             button.innerHTML = "Show";
         }
         map.setLayoutProperty("musor-55jxip","visibility",visibility);
-        //map.setLayoutProperty("musor-55jxip","visibility",visibility);
+        map.setLayoutProperty("road","visibility",visibility);
      
     }
     
