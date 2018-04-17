@@ -36,13 +36,18 @@ var map = new mapboxgl.Map({
     zoom: 13 // starting zoom
 });
     
-  
-    
-    map.on("click", function() {
+ map.on("click", function() {
       var c = map.getZoom();
         console.log('zoom',c);
     });
+
+    button.addEventListener("click", kryafunc);
     
+    kryafunc () {
+    var currentZoom = map.getZoom();
+    map.setZoom(currentZoom+0.5);
+    console.log('krya');
+    }
   
     
 </script>
