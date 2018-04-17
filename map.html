@@ -37,18 +37,38 @@ var map = new mapboxgl.Map({
     zoom: 13 // starting zoom
 });
     
- map.on("click", function() {
+/* map.on("click", function() {
       var c = map.getZoom();
         console.log('zoom',c);
-    });
+    }); */
 
-    button.addEventListener("click", kryafunc);
+    button.addEventListener("click", kryaFunc);
     
-   function kryafunc () {
+ /*  function kryafunc () {
     var currentZoom = map.getZoom();
     map.setZoom(currentZoom+0.5);
     
+    }*/
+    
+    function kryaFunc(){
+    var visibility = map.getLayoutProperty("musor-55jxip","visibility");
+        if (visibility === "visible"){
+        visibility = "none";
+          button.innerHTML = "Hide";
+        } 
+        else {
+        visibility = "visible";
+            button.innerHTML = "Show";
+        }
+        map.setLayoutProperty("musor-55jxip","visibility",visibility);
+        //map.setLayoutProperty("musor-55jxip","visibility",visibility);
+     
     }
+    
+  /*  map.on("zoom",function(){
+        var c = map.getZoom();
+        console.log('zoom,c');
+    });*/
   
     
 </script>
