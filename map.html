@@ -62,6 +62,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWx0eW5haSIsImEiOiJjamR2dXVtb3MwNDlsMzNxbGszM
     
     }*/
     
+    var visibility1 = none;
+    
     function kryaFunc(){
     var visibility = map.getLayoutProperty("musor-55jxip","visibility");
         if (visibility === "visible"){
@@ -72,9 +74,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWx0eW5haSIsImEiOiJjamR2dXVtb3MwNDlsMzNxbGszM
         visibility = "visible";
           button.innerHTML = "Show";      
         }
-        }
-    
-    function kryaFunc2(){
+       map.setLayoutProperty("musor-55jxip","visibility",visibility);
+   
+        function kryaFunc2(){
     var visibility2 = map.getLayoutProperty("road","visibility");
         if (visibility2 === "visible"){
         visibility2 = "none";
@@ -89,7 +91,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWx0eW5haSIsImEiOiJjamR2dXVtb3MwNDlsMzNxbGszM
         var c = map.getZoom();
         console.log('zoom,c');
     });*/
-        map.setLayoutProperty("musor-55jxip","visibility",visibility);
+      
         map.setLayoutProperty("road","visibility",visibility2);
      
   
